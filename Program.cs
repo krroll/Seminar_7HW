@@ -60,6 +60,31 @@
 // } 
 // else Console.WriteLine("Такого числа в массиве нет");
 
+// С поиском элемента позиции
+
+int [,] matrix = new int [4,4];
+Console.WriteLine("Введите номер строки: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите номер столбца: ");
+int m = Convert.ToInt32(Console.ReadLine());
+
+if (n>matrix.GetLength(0) || m>matrix.GetLength(0))
+{
+    Console.WriteLine("такого элемента в массиве нет");
+}
+else
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i,j] = new Random().Next(10);
+            Console.Write(matrix[i,j] + " ");
+        }
+        Console.WriteLine();
+    }
+Console.WriteLine("Искомый Элемент: "+ matrix[n,m]);
+}
 // ----------------------------------------------
 // Задача 52. Задайте двумерный массив из целых чисел. 
 // Найдите среднее арифметическое элементов в каждом столбце.
@@ -69,23 +94,23 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-int [,] matrix = new int [4,4];
-double [] array = new double [matrix.GetLength(1)];
+// int [,] matrix = new int [4,4];
+// double [] array = new double [matrix.GetLength(1)];
 
-for (int i = 0; i < matrix.GetLength(0); i++)
-{
-    for (int j = 0; j < matrix.GetLength(1); j++)
-    {
-        matrix[i,j] = new Random().Next(10);
-        array[j] = array[j]+ matrix[i,j];
-        Console.Write(matrix[i,j] + " ");
-    }
-    Console.WriteLine();
-}
+// for (int i = 0; i < matrix.GetLength(0); i++)
+// {
+//     for (int j = 0; j < matrix.GetLength(1); j++)
+//     {
+//         matrix[i,j] = new Random().Next(10);
+//         array[j] = array[j]+ matrix[i,j];
+//         Console.Write(matrix[i,j] + " ");
+//     }
+//     Console.WriteLine();
+// }
 
-for (int k = 0; k < matrix.GetLength(1); k++)
-{
-    array[k]= array[k]/matrix.GetLength(1);
-}
+// for (int k = 0; k < matrix.GetLength(1); k++)
+// {
+//     array[k]= array[k]/matrix.GetLength(1);
+// }
 
-Console.WriteLine(String.Join("; ",array));
+// Console.WriteLine(String.Join("; ",array));
